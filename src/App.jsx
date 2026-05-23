@@ -1,52 +1,83 @@
-function App() {
-  return (
-    <div
-      style={{
-        fontFamily: "Arial",
-        background: "#f4f7fb",
-        minHeight: "100vh",
-        padding: "40px",
-        textAlign: "center",
-      }}
-    >
-      <h1
-        style={{
-          color: "#1e3a8a",
-          fontSize: "48px",
-          marginBottom: "20px",
-        }}
-      >
-        AI Insurance Advisor
-      </h1>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
 
-      <p
-        style={{
-          fontSize: "20px",
-          color: "#444",
-          maxWidth: "700px",
-          margin: "0 auto",
-        }}
-      >
-        Compare LIC policies, calculate premiums,
-        and get smart AI-powered insurance advice.
-      </p>
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Manrope", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
-      <button
-        style={{
-          marginTop: "30px",
-          padding: "15px 30px",
-          fontSize: "18px",
-          border: "none",
-          borderRadius: "10px",
-          cursor: "pointer",
-          background: "#2563eb",
-          color: "white",
-        }}
-      >
-        Get Started
-      </button>
-    </div>
-  )
+  /* Custom Indigo/Navy palette */
+  --color-primary: #001e40;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #003366;
+  --color-on-primary-container: #799dd6;
+  --color-inverse-primary: #a7c8ff;
+
+  /* Premium Gold/Amber palette */
+  --color-secondary: #735c00;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #fed65b;
+  --color-on-secondary-container: #745c00;
+
+  --color-tertiary: #001e42;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #003369;
+  --color-on-tertiary-container: #689def;
+
+  --color-background: #f8f9fa;
+  --color-on-background: #191c1d;
+
+  --color-surface: #f8f9fa;
+  --color-on-surface: #191c1d;
+  --color-on-surface-variant: #43474f;
+  --color-outline: #737780;
+  --color-outline-variant: #c3c6d1;
+  --color-surface-dim: #d9dadb;
+  --color-surface-bright: #f8f9fa;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f3f4f5;
+  --color-surface-container: #edeeef;
+  --color-surface-container-high: #e7e8e9;
+  --color-surface-container-highest: #e1e3e4;
+
+  /* Custom animation durations and transitions */
+  --animate-fade-in-up: fade-in-up 0.6s ease-out forwards;
 }
 
-export default App
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+    font-family: var(--font-sans);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
